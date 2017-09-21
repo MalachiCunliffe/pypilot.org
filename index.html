@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- <link rel="stylesheet" href="w3.css"> -->
+  <head>
+    <title>pypilot - open source marine autopilot</title>
+    <script>
+      function openTab( Name) {
+        var i;
+        var x = document.getElementsByClassName("tab");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(Name).style.display = "block";
+      }
+      openTab("About")
+    </script>
+  </head>
+  <body>
+    <div class="w3-bar w3-black">
+      <a href="javascript:void(0)" onclick="openTab('About');" class="w3-button w3-bar-item">
+        About
+      </a>
+      <a href="javascript:void(0)" onclick="openTab('News');" class="w3-button w3-bar-item">
+        News
+      </a>
+      <a href="http://forum.openmarine.net/forumdisplay.php?fid=17" class="w3-button w3-bar-item">Forum</a>
+      <a href="https://github.com/pypilot/pypilot/wiki" class="w3-button w3-bar-item">Wiki</a>
+      <a href="https://github.com/pypilot/pypilot" class="w3-button w3-bar-item">Code</a>
+      <a href="http://pypilot.org/shop" class="w3-button w3-bar-item">Shop</a>
+    </div>
+    <br>
+
+    <div id="About" class="w3-container tab">
+    <p>
+      <H2>pypilot is an open source marine autopilot.</H2>
+    <p>
+      <ul>
+        <li>Written by <a href="http://seandepagnier.users.sourceforge.net/">Sean D'Epagnier</a>, <a href="opencpn.org">OpenCPN</a> developer and sailor.</li>
+        <li>Included in the popular <a href="www.sailoog.com/en/openplotter">Open Plotter</a> Chart plotter system for raspberry pi</li>
+        <li>Tested with success on ocean passages from the virgin islands to Maine.</li>
+      </ul>
+
+    <p>
+     <H2>Features</H2>
+      <ul>
+        <li>Automatic sensor calibration</li>
+        <li>Steering modes:
+          <ul>
+            <li>Compass</li>
+            <li>GPS</li>
+            <li>Apparent Wind</li>
+            <li>True Wind</li>
+          </ul>
+        <li>Communicates both signalk and nmea0183</li>
+        <li>Integrates with OpenCPN</li>
+        <li>Good performance with low power consumption</li>
+        <li>Remote Control, and network control (smartphone control)</li>
+        <li>Modular design, ensures reusability, and easily modified.</li>
+      </ul>
+    <p>
+      <H4>Finally, a liberated autopilot!  </H4>
+    </div>
+
+    <div id="News" class="w3-container tab">
+      <ul>
+        <li>Thu Sep 21 2017 - Initial launch of pypilot.org
+      </ul>
+    </div>    
+  </body>
+</html>
+
