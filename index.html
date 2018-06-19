@@ -6,40 +6,46 @@
   <!-- <link rel="stylesheet" href="w3.css"> -->
   <head>
     <title>pypilot - open source marine autopilot</title>
-    <script>
-      function openTab( Name) {
-        var i;
-        var x = document.getElementsByClassName("tab");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        document.getElementById(Name).style.display = "block";
-      }
-      openTab("About")
-    </script>
   </head>
   <body>
     <div class="w3-bar w3-black">
       <a href="javascript:void(0)" onclick="openTab('About');" class="w3-button w3-bar-item">
         About
       </a>
-      <a href="javascript:void(0)" onclick="openTab('News');" class="w3-button w3-bar-item">
-        News
+      <a href="javascript:void(0)" onclick="openTab('Contact');" class="w3-button w3-bar-item">
+        Contact
       </a>
+      <a href="javascript:void(0)" onclick="openTab('Video');" class="w3-button w3-bar-item">Video</a>
       <a href="http://forum.openmarine.net/forumdisplay.php?fid=17" class="w3-button w3-bar-item">Forum</a>
       <a href="https://github.com/pypilot/pypilot/wiki" class="w3-button w3-bar-item">Wiki</a>
-      <a href="https://github.com/pypilot/pypilot" class="w3-button w3-bar-item">Code</a>
-      <a href="http://pypilot.org/shop" class="w3-button w3-bar-item">Shop</a>
+      <a href="javascript:void(0)" onclick="openTab('Download');" class="w3-button w3-bar-item">
+        Download
+      </a>
+      <a href="http://github.com/pypilot/pypilot" class="w3-button w3-bar-item">Code</a>
+      <a href="https://pypilot.0337ml-user.freehosting.host/store/" class="w3-button w3-bar-item">Store</a>
     </div>
     <br>
-
+<!--
+    <div id="Home" class="w3-container tab">
+      <p>
+        Click the Map below for more details
+        <br>
+        <img src="images/complete.jpg" usemap="#completemap">
+        <map name="completemap">
+          <area shape="polygon" coords="420,0,420,250,660,250,750,0" href="https://github.com/pypilot/pypilot/wiki/autopilot_computer">
+          <area shape="polygon" coords="750,0,660,280,1024,280,1024,0" href="https://github.com/pypilot/pypilot/wiki/controller">
+          <area shape="polygon" coords="350,420,1024,360,1024,660,350,660" href="https://github.com/pypilot/pypilot/wiki/motor">
+          <area shape="polygon" coords="0,380,340,380,340,660,0,660" href="https://github.com/pypilot/pypilot/wiki/weather_sensors">
+        </map>
+      </p>
+    </div>
+    -->
     <div id="About" class="w3-container tab">
     <p>
       <H2>pypilot is an open source marine autopilot.</H2>
     <p>
-      <ul>
-        <li>Written by <a href="http://seandepagnier.users.sourceforge.net/">Sean D'Epagnier</a>, <a href="opencpn.org">OpenCPN</a> developer and sailor.</li>
-        <li>Included in the popular <a href="www.sailoog.com/en/openplotter">Open Plotter</a> Chart plotter system for raspberry pi</li>
+      <ul>        
+        <li>Included in the popular <a href="http://www.sailoog.com/">Open Plotter</a> Chart plotter system for raspberry pi</li>
         <li>Tested with success on ocean passages from the virgin islands to Maine.</li>
       </ul>
 
@@ -64,11 +70,78 @@
       <H4>Finally, a liberated autopilot!  </H4>
     </div>
 
-    <div id="News" class="w3-container tab">
-      <ul>
-        <li>Thu Sep 21 2017 - Initial launch of pypilot.org
-      </ul>
-    </div>    
+    <div id="Contact" class="w3-container tab">
+
+      <p>
+        <H2>email</H2>
+        <H3>
+          seandepagnier at gmail dot com</H3>
+        <H4>
+        <br>I recommend "pypilot" in the subject to avoid spam filter.
+        </H4>
+      </p>
+      <H4>
+      Also consider a donation as this is free software.  Donations are greatly appreciated and enable me to experiment with new sensors or hardware and create future projects.  I am hoping to build a free software sonar and much more</H4>
+         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="N7EJ9T9G8VVJ6">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+         </form>
+    </div>
+
+    
+    <div id="Download" class="w3-container tab">
+    <p>
+      <H2>Openplotter image</H2>
+      <p><a href="http://sailoog.com/openplotter">Openplotter</a>
+      can be used with any raspberry pi.  pypilot is included in openplotter, you just need imu sensors and a motor controller.
+    </p>
+    <p>
+      <H2>Tinypilot image</H2>
+      Disk images
+      <p>Current <a href="https://mega.nz/#!OGhRXaDD!DNcI6gBKracLeJakZiYa2HuxHssLEKUhePZbDFlx-t4">tinypilot-18062018.img.xz</a>
+      <p>Previous <a href="https://mega.nz/#!qOYwlB4L!vMt0ct38ZH6WRCMDQN4p_6Rl261D2mNAIydAZmwffCU">tinypilot-28022018.img.xz</a>
+      <p>This image is compressed with xz and first must be extracted.
+        <p>With linux, you can extract with unxz then write the image,
+          or use xzcat directly.
+          be sure to replace /dev/sda with device of sdcard,
+      <pre>
+        xzcat tinypilot-18062018.img.xz | dd of=/dev/sda bs=4M
+      </pre>
+
+      For windows, try winrar or 7zip to extract.
+      <p>See the raspberry <a href="https://www.raspberrypi.org/documentation/installation/installing-images/">documentation</a> for writing disk images.
+      
+      <p>Tinypilot is a special linux distribution based on <a href="http://www.tinycorelinux.net/">tinycore linux</a>  This is more stable than openplotter and light weight running out of ram.  It works well on the single core raspberry zero and zero-W, but can also work on any raspberry pi.
+      <p>Requires inertial sensors, preferably mpu9255 or mpu9250. Optional to connect a nokia5110 LCD display to the spi pins, and to use a 4 or 5 button keypad wire to gpio.  Also an optional IR sensor on GPIO pin 4 can be used by any TV remote.
+    </p>
+    </div>
+    
+    <div id="Video" class="w3-container tab">
+      <h3>Sailing</h3>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ZaLBRRelT-M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <br>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/KQuBwLSMSxI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> 
+      <h3>Setup</h3>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/7TdXImMFTZk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <br>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/au9oZ_-Qces" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    
+    <footer><ul><li>&nbsp;pypilot is developed under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a></li><li>Written by <a href="http://seandepagnier.users.sourceforge.net/">Sean D'Epagnier</a>.</li></ul></footer>
+    <script>
+      function openTab( Name) {
+        var i;
+        var x = document.getElementsByClassName("tab");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(Name).style.display = "block";
+      }
+      openTab("About")
+    </script>
+
   </body>
 </html>
 
